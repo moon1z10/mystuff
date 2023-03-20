@@ -13,14 +13,14 @@ $currentAdapter = Get-NetAdapter |
 
 # Switch the adapter
 if ($currentAdapter -eq "Ethernet") {
-    Write-Output "Ethernet adapter is currently enabled"
+    Write-Output "Ethernet adapter is currently disabled"
     Disable-NetAdapter -Name $adapterNameEthernet -Confirm:$false
     Start-Sleep -Seconds 2
     Enable-NetAdapter -Name $adapterNameWiFi -Confirm:$false
     Write-Output "Wi-Fi adapter is now enabled"
 }
 elseif ($currentAdapter -eq "Wi-Fi") {
-    Write-Output "Wi-Fi adapter is currently enabled"
+    Write-Output "Wi-Fi adapter is currently disabled"
     Disable-NetAdapter -Name $adapterNameWiFi -Confirm:$false
     Start-Sleep -Seconds 2
     Enable-NetAdapter -Name $adapterNameEthernet -Confirm:$false
